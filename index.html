@@ -239,8 +239,29 @@ footer { border-top: 1px solid var(--line); padding-block: 40px 48px; color: var
 .foot-links a { text-decoration: none; }
 .foot-links a:hover { color: var(--text); }
 
+/* Next Play AI */
+.ai-band { border-top: 1px solid var(--line); background: color-mix(in srgb, var(--panel) 55%, var(--ink)); }
+.ai-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; }
+.ai-grid > * { min-width: 0; }
+.ai-grid h2 { font-weight: 900; font-size: clamp(34px, 4.6vw, 58px); margin-top: 16px; }
+.soon { font-family: var(--f-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--warn); border: 1px solid color-mix(in srgb, var(--warn) 45%, transparent); padding: 2px 7px; white-space: nowrap; }
+.eyebrow .soon { margin-left: 6px; }
+.plan li .soon { font-size: 10px; margin-right: 6px; padding: 1px 5px; vertical-align: 2px; }
+.ai-copy { color: var(--mute); font-size: 19px; max-width: 44ch; margin: 20px 0 28px; }
+.ai-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 18px; }
+.ai-list li { position: relative; display: grid; gap: 2px; padding-left: 24px; }
+.ai-list li::before { content: ""; position: absolute; left: 0; top: 8px; width: 10px; height: 10px; background: var(--green); clip-path: polygon(0 0, 100% 50%, 0 100%); }
+.ai-list b { font-weight: 600; }
+.ai-list span { color: var(--mute); }
+.ai-mock-body { padding: 22px 20px 8px; }
+.ai-bars { position: relative; display: grid; grid-template-columns: repeat(10, 1fr); align-items: end; gap: 8px; height: 150px; margin-top: 20px; }
+.ai-bars i { display: block; background: var(--line); }
+.ai-bars i.over { background: var(--green); }
+.ai-line { position: absolute; left: 0; right: 0; border-top: 2px dashed var(--warn); }
+
 @media (max-width: 960px) {
   .hero-grid { grid-template-columns: 1fr; gap: 44px; padding-block: 52px 60px; }
+  .ai-grid { grid-template-columns: 1fr; gap: 40px; }
   .section-head { grid-template-columns: 1fr; }
   .section-head p { justify-self: start; }
   .verticals, .plans, .steps { grid-template-columns: 1fr; }
@@ -270,6 +291,7 @@ footer { border-top: 1px solid var(--line); padding-block: 40px 48px; color: var
     <a class="brand" href="#top" aria-label="The Next Play home"><img class="logo-dark" src="data:image/webp;base64,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" alt=""><img class="logo-light" alt="">The Next <b>Play</b></a>
     <nav class="nav-links" aria-label="Main">
       <a href="#inside">What's inside</a>
+      <a href="#ai">AI</a>
       <a href="#plans">Plans</a>
       <a href="#faq">FAQ</a>
       <a data-link="links" href="#">Links</a>
@@ -369,6 +391,39 @@ footer { border-top: 1px solid var(--line); padding-block: 40px 48px; color: var
     </div>
   </section>
 
+  <section id="ai" class="ai-band">
+    <div class="wrap ai-grid">
+      <div>
+        <div class="eyebrow">Next Play AI <span class="soon">Coming soon</span></div>
+        <h2>Your own betting research desk.</h2>
+        <p class="ai-copy">Next Play AI scans the slate, shows how often a player clears the line, and answers your questions from real game logs. It opens inside your Whop with your membership, so there's no extra login.</p>
+        <ul class="ai-list">
+          <li><b>Today's edges</b><span>Props where recent hit rates stand out, ranked every morning.</span></li>
+          <li><b>Prop analyzer</b><span>Last 5, 10 and 20 games against the line, averages and matchup notes.</span></li>
+          <li><b>AI chat</b><span>Ask about any player or matchup: 10 questions a day on Starter, 25 on Daily Parlays, 100 on +EV Betting.</span></li>
+        </ul>
+      </div>
+      <div class="slip ai-mock">
+        <div class="slip-head"><span>Prop analyzer</span><span class="tag">Sample data</span></div>
+        <div class="ai-mock-body">
+          <div class="slip-channel">9:00 PM · PHX @ DEN</div>
+          <div class="slip-game">Sample player</div>
+          <div class="slip-market">Assists · line 7.5</div>
+          <div class="ai-bars" role="img" aria-label="Last 10 games: 6, 10, 8, 12, 9, 7, 11, 8, 9, 10 assists against a line of 7.5">
+            <div class="ai-line" style="bottom:57.7%"></div>
+            <i style="height:46%"></i><i class="over" style="height:77%"></i><i class="over" style="height:61.5%"></i><i class="over" style="height:92%"></i><i class="over" style="height:69%"></i><i style="height:54%"></i><i class="over" style="height:84.6%"></i><i class="over" style="height:61.5%"></i><i class="over" style="height:69%"></i><i class="over" style="height:77%"></i>
+          </div>
+          <div class="slip-table">
+            <div><small>Last 10</small><span class="num pos">8/10</span></div>
+            <div><small>Avg L10</small><span class="num">9.0</span></div>
+            <div><small>Line</small><span class="num">7.5</span></div>
+          </div>
+        </div>
+        <div class="slip-math">research signal, not betting advice</div>
+      </div>
+    </div>
+  </section>
+
   <section class="steps-band">
     <div class="wrap">
       <div class="section-head">
@@ -407,6 +462,7 @@ footer { border-top: 1px solid var(--line); padding-block: 40px 48px; color: var
             <li>Money and side-hustle education library</li>
             <li>Community chat and wins channel</li>
             <li>Weekly Q&amp;A thread</li>
+            <li><span><span class="soon">Soon</span> Next Play AI, 10 questions/day</span></li>
           </ul>
           <a class="btn btn-ghost" data-link="starter" href="#">Join Starter</a>
         </article>
@@ -423,6 +479,7 @@ footer { border-top: 1px solid var(--line); padding-block: 40px 48px; color: var
             <li class="carry">Everything in Starter</li>
             <li>Daily parlay card in #daily-parlays</li>
             <li>Public results log</li>
+            <li><span><span class="soon">Soon</span> Next Play AI, 25 questions/day</span></li>
           </ul>
           <a class="btn btn-primary" data-link="parlays" href="#">Join Daily Parlays <span class="arrow"></span></a>
         </article>
@@ -442,6 +499,7 @@ footer { border-top: 1px solid var(--line); padding-block: 40px 48px; color: var
             <li>Bet tracker template</li>
             <li>VIP-only chat</li>
             <li>Monthly live call with the founders</li>
+            <li><span><span class="soon">Soon</span> Next Play AI, 100 questions/day</span></li>
           </ul>
           <a class="btn btn-ghost" data-link="ev" href="#">Join +EV</a>
         </article>
@@ -467,6 +525,7 @@ footer { border-top: 1px solid var(--line); padding-block: 40px 48px; color: var
         <details><summary>Do I need money to start TikTok Shop?</summary><p>Very little. The affiliate route means you promote other brands' products for commission, so there is no inventory to buy. Some AI tools have paid tiers, and we show free options first.</p></details>
         <details><summary>How do I cancel or switch plans?</summary><p>From your Whop account, any time. Upgrades apply right away. If you cancel, you keep access until the end of the billing period, then your Discord role is removed.</p></details>
         <details><summary>Do you offer refunds?</summary><p>Because you get instant access to all content, payments are non-refundable. Message us within 48 hours if something went wrong with your access and we will fix it.</p></details>
+        <details><summary>What is Next Play AI?</summary><p>Our research tool inside Whop: daily prop edges, a prop analyzer with hit rates against the line, and an AI chat that answers from game logs. It is coming soon and will be included in every plan. It gives research, not betting advice.</p></details>
         <details><summary>Which sports do the alerts cover?</summary><p>Whatever is in season and has an edge: NFL, NBA, MLB, NHL, college football and basketball, and major soccer leagues.</p></details>
       </div>
     </div>
